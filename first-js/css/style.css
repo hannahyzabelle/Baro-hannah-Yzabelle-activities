@@ -1,0 +1,46 @@
+body {
+        background: linear-gradient(to bottom right, #b86d18, #ff0000); /* ORANGE → RED */
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;   /* left side */
+        align-items: center;           /* vertical center */
+        font-family: Arial;
+        padding-left: 80px;            /* space from left */
+    }
+
+    .container {
+        text-align: left;
+    }
+
+    input {
+        width: 250px;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+    }
+
+    button {
+        padding: 10px 40px;
+        background: #ad5216; /* orange/red button */
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #a84a5e; /* darker red on hover */
+    }
+
+    .error {
+        color: rgb(198, 98, 98);
+        padding: 5px;
+        border: 2px rgb(198, 98, 98) solid;
+        background-color: rgb(252, 155, 155);
+        border-radius: 10px;
+        visibility: hidden;
+
+
+    }
