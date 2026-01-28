@@ -2,37 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-     <script src="./js/calculator.js"></script>
+    <title>Blue Calculator</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+
+        .calculator {
+            width: 260px;
+            margin: 80px auto;
+            padding: 20px;
+            border-radius: 20px;
+            background: #020617;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        /* DISPLAY AREA */
+        .display {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        #valueBox {
+            width: 75%;
+            height: 60px;
+            font-size: 26px;
+            text-align: right;
+            padding: 10px;
+            background: #0f172a;
+            border-radius: 12px;
+            border: 2px solid #38bdf8;
+            color: #e0f2fe;
+        }
+
+        #operatorBox {
+            width: 25%;
+            height: 60px;
+            font-size: 26px;
+            text-align: center;
+            padding: 10px;
+            background: #020617;
+            border-radius: 12px;
+            border: 2px solid #38bdf8;
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        /* BUTTONS */
+        .btn {
+            height: 48px;
+            width: 48px;
+            margin: 4px;
+            border-radius: 50%;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            background: #1e293b;
+            color: #e0f2fe;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #38bdf8;
+            color: #020617;
+            transform: scale(1.1);
+        }
+
+        .button {
+            height: 48px;
+            width: 104px;
+            margin: 4px;
+            border-radius: 14px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            background: #0ea5e9;
+            color: #020617;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #7dd3fc;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
+
 <body>
-    
 
-  <input type="text" id="display" disabled><br><br>
+<div class="calculator">
 
-  <button onclick="showValue('7')">7</button>
-  <button onclick="showValue('8')">8</button>
-  <button onclick="showValue('9')">9</button>
-  <button onclick="showValue('/')">/</button><br><br>
+    <div class="display">
+        <input type="text" id="valueBox" value="0" readonly>
+        <input type="text" id="operatorBox" value="" readonly>
+    </div>
 
-  <button onclick="showValue('4')">4</button>
-  <button onclick="showValue('5')">5</button>
-  <button onclick="showValue('6')">6</button>
-  <button onclick="showValue('*')">*</button><br><br>
+    <div class="buttons">
+        <button class="btn" onclick="appendNumber('7')">7</button>
+        <button class="btn" onclick="appendNumber('8')">8</button>
+        <button class="btn" onclick="appendNumber('9')">9</button>
+        <button class="btn" onclick="setOperator('/')">/</button><br>
 
-  <button onclick="showValue('1')">1</button>
-  <button onclick="showValue('2')">2</button>
-  <button onclick="showValue('3')">3</button>
-  <button onclick="showValue('-')">-</button><br><br>
+        <button class="btn" onclick="appendNumber('4')">4</button>
+        <button class="btn" onclick="appendNumber('5')">5</button>
+        <button class="btn" onclick="appendNumber('6')">6</button>
+        <button class="btn" onclick="setOperator('*')">*</button><br>
 
-  <button onclick="showValue('0')">0</button>
-  <button onclick="showValue('.')">.</button>
-  <button onclick="showResult('=')">=</button>
-  <button onclick="showValue('+')">+</button><br><br>
+        <button class="btn" onclick="appendNumber('1')">1</button>
+        <button class="btn" onclick="appendNumber('2')">2</button>
+        <button class="btn" onclick="appendNumber('3')">3</button>
+        <button class="btn" onclick="setOperator('-')">-</button><br>
 
-  <button onclick="clearDisplay()">AC</button>
-  <button onclick="clearDisplay('/')">C</button>
+        <button class="btn" onclick="appendNumber('0')">0</button>
+        <button class="btn" onclick="appendNumber('.')">.</button>
+        <button class="btn" onclick="calculate()">=</button>
+        <button class="btn" onclick="setOperator('+')">+</button><br>
+
+        <button class="button" onclick="clearAll()">AC</button>
+        <button class="button" onclick="backspace()">C</button>
+    </div>
+
+</div>
+
+<script src="./js/calculator.js"></script>
 
 </body>
 </html>
