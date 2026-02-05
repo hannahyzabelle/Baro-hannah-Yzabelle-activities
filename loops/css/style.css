@@ -1,0 +1,49 @@
+/* Page layout */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #0f172a; /* dark blue */
+  color: #e0f2fe;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Heading */
+h2 {
+  color: #38bdf8;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Buttons */
+button {
+  background-color: #1e40af;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  margin: 6px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+button:hover {
+  background-color: #2563eb;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+/* Output area */
+#output {
+  margin: 30px auto;
+  width: 85%;
+  max-width: 520px;
+  background-color: #020617;
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+  color: #bae6fd;
+  min-height: 160px;
+  white-space: pre-wrap;
+}
